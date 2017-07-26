@@ -1,0 +1,9 @@
+c:\users\macos\documents\visual studio 2015\Projects\LinqEAP\LinqEAP\bin\Debug\LinqEAP.exe.config
+c:\users\macos\documents\visual studio 2015\Projects\LinqEAP\LinqEAP\bin\Debug\LinqEAP.exe
+c:\users\macos\documents\visual studio 2015\Projects\LinqEAP\LinqEAP\bin\Debug\LinqEAP.pdb
+c:\users\macos\documents\visual studio 2015\Projects\LinqEAP\LinqEAP\obj\Debug\LinqEAP.csprojResolveAssemblyReference.cache
+c:\users\macos\documents\visual studio 2015\Projects\LinqEAP\LinqEAP\obj\Debug\LinqEAP.Form1.resources
+c:\users\macos\documents\visual studio 2015\Projects\LinqEAP\LinqEAP\obj\Debug\LinqEAP.Properties.Resources.resources
+c:\users\macos\documents\visual studio 2015\Projects\LinqEAP\LinqEAP\obj\Debug\LinqEAP.csproj.GenerateResource.Cache
+c:\users\macos\documents\visual studio 2015\Projects\LinqEAP\LinqEAP\obj\Debug\LinqEAP.exe
+c:\users\macos\documents\visual studio 2015\Projects\LinqEAP\LinqEAP\obj\Debug\LinqEAP.pdb

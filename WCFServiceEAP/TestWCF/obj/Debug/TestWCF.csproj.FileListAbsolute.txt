@@ -1,0 +1,9 @@
+C:\Users\MacOS\documents\visual studio 2015\Projects\WCFServiceEAP\TestWCF\bin\Debug\TestWCF.exe.config
+C:\Users\MacOS\documents\visual studio 2015\Projects\WCFServiceEAP\TestWCF\bin\Debug\TestWCF.exe
+C:\Users\MacOS\documents\visual studio 2015\Projects\WCFServiceEAP\TestWCF\bin\Debug\TestWCF.pdb
+C:\Users\MacOS\documents\visual studio 2015\Projects\WCFServiceEAP\TestWCF\obj\Debug\TestWCF.csprojResolveAssemblyReference.cache
+C:\Users\MacOS\documents\visual studio 2015\Projects\WCFServiceEAP\TestWCF\obj\Debug\TestWCF.Form1.resources
+C:\Users\MacOS\documents\visual studio 2015\Projects\WCFServiceEAP\TestWCF\obj\Debug\TestWCF.Properties.Resources.resources
+C:\Users\MacOS\documents\visual studio 2015\Projects\WCFServiceEAP\TestWCF\obj\Debug\TestWCF.csproj.GenerateResource.Cache
+C:\Users\MacOS\documents\visual studio 2015\Projects\WCFServiceEAP\TestWCF\obj\Debug\TestWCF.exe
+C:\Users\MacOS\documents\visual studio 2015\Projects\WCFServiceEAP\TestWCF\obj\Debug\TestWCF.pdb

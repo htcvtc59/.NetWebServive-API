@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "WithDrawMoney";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string codeacc = (string)ViewBag.AccountCode;
+}
+
+<h2>WithDrawMoney</h2>
+@using (Html.BeginForm("WithDrawMoney", "Home"))
+{
+    <div class="form-group">
+        @Html.Label("Amount")
+        @Html.TextBox("amount","",new { @class = "form-control" })
+    </div>
+    <div class="form-group hide" >
+        @Html.Label("Amount")
+        @Html.TextBox("code", "", new { @class = "form-control" })
+    </div>
+    <input type="submit" value="With Draw" class="btn btn-default" />
+
+}
+
+

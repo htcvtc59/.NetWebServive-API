@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "ViewLog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<BankATM.Bank.LogBank> listLog = (List<BankATM.Bank.LogBank>)ViewBag.ListLog;
+}
+
+<h2>ViewLog</h2>
+@foreach (BankATM.Bank.LogBank item in listLog)
+{
+    <h4>@item.ID</h4>
+    <h4>@item.DateTranfer</h4>
+    <h4>@item.ReceiveCode</h4>
+    <h4>@item.Amount</h4>
+    <h4>@item.Type</h4><br />
+}
+

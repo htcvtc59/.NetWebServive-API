@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "BankATM";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    BankATM.Bank.AccountBank accB = (BankATM.Bank.AccountBank)ViewBag.AccountBB;
+    BankATM.Bank.AccountBank accBB = (BankATM.Bank.AccountBank)ViewBag.AccountBBB;
+
+}
+@if (accB != null)
+{
+    <h2>BankATM</h2>
+    <h4>Welcone to :@accB.FullName</h4>
+    <h4>Current Banlance : @accB.MoneyAmount</h4><br />
+    @Html.ActionLink("WithDraw Money", "WithDrawMoney", "Home", new { code = accB.Code }, null)<br />
+    @Html.ActionLink("Tranfer Money", "TranferMoney", "Home", new { code = accB.Code }, null)<br />
+    @Html.ActionLink("View Log", "ViewLog", "Home")
+}
+else
+{
+    <h2>BankATM</h2>
+    <h4>Welcone to :@accBB.FullName</h4>
+    <h4>Current Banlance : @accBB.MoneyAmount</h4><br />
+    @Html.ActionLink("WithDraw Money", "WithDrawMoney", "Home", new { code = accBB.Code }, null)<br />
+    @Html.ActionLink("Tranfer Money", "TranferMoney", "Home", new { code = accBB.Code }, null)<br />
+    @Html.ActionLink("View Log", "ViewLog", "Home")
+}
+
+
+
+

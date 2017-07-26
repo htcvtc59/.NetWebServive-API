@@ -1,0 +1,89 @@
+﻿@model IEnumerable<TestAPI.Models.Employees>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    
+}
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<br />
+
+<div class="row">
+    <div class="col-lg-4">
+        @using (Html.BeginForm("Index", "Home"))
+        {
+            <div class="input-group input-group-lg">
+                @Html.TextBox("keyword", null, new { @class = "form-control" })
+                <span class="input-group-btn">
+                    <button class="btn btn-success" type="submit">Search!</button>
+                </span>
+            </div>
+        }
+
+    </div>
+
+    <div class="col-lg-8">
+
+    </div>
+</div>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                EmployeeID
+            </th>
+            <th>
+                EmployeeName
+            </th>
+            <th>
+                Department
+            </th>
+            <th>
+                Salary
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salary)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.EmployeeID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.EmployeeID })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+

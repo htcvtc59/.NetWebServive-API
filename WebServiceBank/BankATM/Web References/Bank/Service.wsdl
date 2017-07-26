@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccountB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccountBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountBResult" type="tns:AccountBank" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AccountBank">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pass" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MoneyAmount" nillable="true" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AccountView">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccountViewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountViewResult" type="tns:AccountBank" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogDraw">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="acc" type="tns:AccountBank" />
+            <s:element minOccurs="1" maxOccurs="1" name="money" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogDrawResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LogDrawResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogTranfer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="acc" type="tns:AccountBank" />
+            <s:element minOccurs="1" maxOccurs="1" name="money" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodeRecieve" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogTranferResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LogTranferResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewLog">
+        <s:complexType />
+      </s:element>
+      <s:element name="ViewLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ViewLogResult" type="tns:ArrayOfLogBank" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLogBank">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LogBank" nillable="true" type="tns:LogBank" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LogBank">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateTranfer" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReceiveCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" nillable="true" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccountBSoapIn">
+    <wsdl:part name="parameters" element="tns:AccountB" />
+  </wsdl:message>
+  <wsdl:message name="AccountBSoapOut">
+    <wsdl:part name="parameters" element="tns:AccountBResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccountViewSoapIn">
+    <wsdl:part name="parameters" element="tns:AccountView" />
+  </wsdl:message>
+  <wsdl:message name="AccountViewSoapOut">
+    <wsdl:part name="parameters" element="tns:AccountViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogDrawSoapIn">
+    <wsdl:part name="parameters" element="tns:LogDraw" />
+  </wsdl:message>
+  <wsdl:message name="LogDrawSoapOut">
+    <wsdl:part name="parameters" element="tns:LogDrawResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogTranferSoapIn">
+    <wsdl:part name="parameters" element="tns:LogTranfer" />
+  </wsdl:message>
+  <wsdl:message name="LogTranferSoapOut">
+    <wsdl:part name="parameters" element="tns:LogTranferResponse" />
+  </wsdl:message>
+  <wsdl:message name="ViewLogSoapIn">
+    <wsdl:part name="parameters" element="tns:ViewLog" />
+  </wsdl:message>
+  <wsdl:message name="ViewLogSoapOut">
+    <wsdl:part name="parameters" element="tns:ViewLogResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccountB">
+      <wsdl:input message="tns:AccountBSoapIn" />
+      <wsdl:output message="tns:AccountBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccountView">
+      <wsdl:input message="tns:AccountViewSoapIn" />
+      <wsdl:output message="tns:AccountViewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogDraw">
+      <wsdl:input message="tns:LogDrawSoapIn" />
+      <wsdl:output message="tns:LogDrawSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogTranfer">
+      <wsdl:input message="tns:LogTranferSoapIn" />
+      <wsdl:output message="tns:LogTranferSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewLog">
+      <wsdl:input message="tns:ViewLogSoapIn" />
+      <wsdl:output message="tns:ViewLogSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountB">
+      <soap:operation soapAction="http://tempuri.org/AccountB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountView">
+      <soap:operation soapAction="http://tempuri.org/AccountView" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogDraw">
+      <soap:operation soapAction="http://tempuri.org/LogDraw" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogTranfer">
+      <soap:operation soapAction="http://tempuri.org/LogTranfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewLog">
+      <soap:operation soapAction="http://tempuri.org/ViewLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountB">
+      <soap12:operation soapAction="http://tempuri.org/AccountB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccountView">
+      <soap12:operation soapAction="http://tempuri.org/AccountView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogDraw">
+      <soap12:operation soapAction="http://tempuri.org/LogDraw" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogTranfer">
+      <soap12:operation soapAction="http://tempuri.org/LogTranfer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewLog">
+      <soap12:operation soapAction="http://tempuri.org/ViewLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://localhost:63747/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://localhost:63747/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
